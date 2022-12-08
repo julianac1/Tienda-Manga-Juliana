@@ -1,5 +1,7 @@
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
+import ItemContainer from "./ItemContainer";
+import Figure from "./Figure";
 
 const NavBar = () => {
 
@@ -19,7 +21,7 @@ const NavBar = () => {
             </Link>
         </div>
         
-        {/* Este botom de activa cuando la pantalla se minimiza. Debo ajustarlo para quedarse en el centro.  */}
+        {/* Este botom de activa cuando la pantalla se minimiza. Pendiente ajustarlo para quedarse en el centro.  */}
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon "></span>
         </button>
@@ -28,8 +30,8 @@ const NavBar = () => {
         <div className="collapse navbar-collapse position-absolute top-50 start-50 translate-middle" id="navbarNavAltMarkup">
             <div className="navbar-nav">
             <Link to = "/" className="nav-link active" aria-current="page" href="#">Inicio</Link>
-            <Link to= "/manga" className="nav-link active" aria-current="page" href="#">Mangas</Link>
-            <Link to = "/Figure" className="nav-link active" aria-current="page" href="#">Figuras</Link>
+            <Link to= "/category/manga" className="nav-link active" aria-current="page" href="#">Mangas</Link>
+            <Link to = "/category/figure" className="nav-link active" aria-current="page" href="#">Figuras</Link>
             </div>
         </div>
 

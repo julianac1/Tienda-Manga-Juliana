@@ -1,19 +1,24 @@
-import { Form, Link } from "react-router-dom";
-import bleachFigure from "../imagines/bleachFigure.jpg";
-import chainsawmanFigure from "../imagines/chainsawmanFigure.jpg";
-import NarutoFigura from "../imagines/NarutoFigura.jpg";
-import pokemonFigura from "../imagines/pokemonFigura.jpg";
+// import { Form, Link } from "react-router-dom";
+// import bleachFigure from "../imagines/bleachFigure.jpg";
+// import chainsawmanFigure from "../imagines/chainsawmanFigure.jpg";
+// import NarutoFigura from "../imagines/NarutoFigura.jpg";
+// import pokemonFigura from "../imagines/pokemonFigura.jpg";
+// import listadeProductos from "../productos/ListadeProductos.json";
+// import { useState, useEffect } from "react";
+// import ItemContainer from "./ItemContainer";
 
 
 
 
 function Figure() {
+    
     return(
-        
-        <div>
-            <h1>Seccion figure "En construccion"</h1>
+                
+         <div>
+             <h1>Seccion figure "En construccion"</h1>
 
-            <div className="container row">
+        {/* Card de bootstrap con img, titulo y texto de los prodcutos */}
+        {/* <div className="container row">
         
         <div className="card col-md-3" width="auto">
             <img src = {bleachFigure} className="card-img-top" alt="..."></img>
@@ -51,13 +56,13 @@ function Figure() {
             </div>
         </div>
         
-        </div>
+        </div> */}
 
 
         </div>
 
         
-    )
+     )
 }
 
 export default Figure;

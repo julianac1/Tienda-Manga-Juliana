@@ -1,20 +1,70 @@
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useParams } from "react-router-dom";
 import AttackOnTitanvol33 from "../imagines/AttackOnTitanvol33.jpg";
 import chainsawmanvolume12 from "../imagines/chainsawmanvolume12.jpg";
 import FullMetalvol27 from "../imagines/FullMetalvol27.jpg";
 import GOKUSHUFUDO3 from "../imagines/GOKUSHUFUDO3.jpg";
+import listadeProductos from "../productos/ListadeProductos.json";
+import { useState, useEffect } from "react";
+import ItemContainer from "./ItemContainer";
+import Figure from "./Figure";
 
 
 function Manga() {
 
+    const [productos, setProductos] = useState ([])
+    
+    const {categoryName} = useParams();
+
+    useEffect (()=>{
+        const productosFiltrados = listadeProductos.filter((productos)=>{
+            return productos.category == categoryName
+        })
+        setProductos (productosFiltrados)
+    },[])
+    
+
     return(
     
     <div>
-        <h1>Seccion Manga "En construccion"</h1>
+        {/* <h1>Seccion {categoryName} "En construccion"</h1> */}
+        <h2>Bienvenido a sección {categoryName}</h2>
 
-        <div className="container row">
-        
-        <div className="card col-md-3" width="auto">
+        {productos.map((productos)=>(
+
+            <div className="card col-md-3" width="auto">
+            <Link to={`/item/${productos.id}`} >
+            <img src = {productos.image} className="card-img-top" alt="..."></img>
+            </Link>
+            {/* <img src = {productos.image} className="card-img-top" alt="..."></img> */}
+            <div className="card-body">
+                <h5 className="card-title">{productos.title}</h5>
+                <p className="card-text">{productos.description}</p>
+                {/* <Link to={`/item/${productos.id}`}>
+                    <img> src = {productos.image} </img>
+                </Link> */}
+            </div>
+
+            </div>
+
+            
+
+
+
+            //Opción simples de como exhibir los productos en el DOM
+            // <div>
+            //     <h2>{productos.title}</h2>
+            //     <p>{productos.description}</p>
+            //     <Link to={`/item/${productos.id}`}>
+            //         <img src={productos.image} alt="" />
+            //     </Link>
+            // </div>
+        ))}
+
+
+
+        {/* Card de bootstrap con la img, titulo y detalle de los productos */}
+        {/* <div className="container row">
+                <div className="card col-md-3" width="auto">
             <img src = {AttackOnTitanvol33} className="card-img-top" alt="..."></img>
             <div className="card-body">
                 <h5 className="card-title">Attack On Titan vol. 33</h5>
@@ -50,7 +100,7 @@ function Manga() {
             </div>
         </div>
         
-        </div>
+        </div> */}
         
 
     </div>

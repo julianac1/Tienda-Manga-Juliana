@@ -3,7 +3,8 @@ import CartWidget from "./componentes/CartWidget";
 import ItemListContainer from "./componentes/ItemListContainer";
 import Manga from "./componentes/Manga";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Figure from "./componentes/Figure";
+import Figure from "./componentes/Figure"
+import ItemContainer from "./componentes/ItemContainer";
 
 const App = ()=> {
   return (
@@ -16,8 +17,9 @@ const App = ()=> {
 
     <Routes>
         <Route exact path="/" element={<ItemListContainer/>}></Route>
-        <Route path="manga" element={<Manga/>}></Route>
-        <Route path="figure" element={<Figure/>}></Route>
+        <Route path="category/:categoryName" element={<Manga/>}></Route>
+        <Route path="/item/:itemID" element={<ItemContainer/>}></Route>
+        <Route path="category/:categoryName" element={<Figure/>}></Route> 
     </Routes>
 
     {/* Mensaje de bienvenida en ItemListContainer.jsx */}
